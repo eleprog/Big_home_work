@@ -1,0 +1,60 @@
+0.0 Dano tri chisla a,b,c, maksimal'noe iz nih umen'shit' na 2, minimal'noe uvelichit' na 2.
+0.1 Funkciya sozdaniya celochislennogo massiva i zapolneniya ego sluchajnymi znacheniyami v zadannom diapazone.
+0.2 Funkciya zapolneniya celochislenogo massiva sluchajnymi znacheniyami v zadannom diapazone.
+0.3 Napisat' funkciyu udaleniya chetnyh cifr v chisle. (*)
+0.4 Napisat' funkciyu, kotoraya proveryaet, yavlyaetsya li zadannoe polozhitel'noe chislo prostym.  (*)
+
+1.0 Napisat' funkciyu poiska zadannogo elementa v celochislennom massive. (*)
+1.1 Napisat' funkciyu poiska minimal'nogo znacheniya v massive. (*)
+1.2 Napisat' funkciyu podscheta summy elementov massiva. (*)
+1.3 Napisat' funkciyu podscheta proizvedeniya elementov massiva. (*)
+1.4 Napisat' funkciyu, kotoraya  opredelyaet chislo, vstrechayushcheesya maksimal'noe kolichestvo raz. (**)
+1.5 Napisat' funkciyu proverki tipa massiva (vozrastanie, ubyvanie, ravenstvo). (*) 
+
+2.0   Napisat' funkciyu sortirovki massiva;
+2.1.0 Sortirovka metodom puzyr'ka. (*)
+2.1.1 Sortirovka puzyr'kom s uluchsheniem. (**)
+2.1.2 SHejkernaya sortirovka. (***)
+2.2   Sortirovka metodom pryamoj vstavki. (*)
+
+4.0 Dano matrica NxM, najti poziciyu minimal'nogo elementa. (*)
+4.1 Opredelit' summu elementov glavnoj diagonali + elementov pod pobochnoj diagonal'yu. (*)
+4.2 Opredelit' summu elementov pobochnoj diagonali + elementov pod pobochnoj diagonal'yu. (*)
+4.3 Opredelit' summu elementov zakrashennoj oblasti(krest). (*)
+4.4 Opredelit' summu elementov zakrashennoj oblasti(pesochnye chasy). (*)
+4.5 Opredelit' summu elementov zakrashennoj oblasti(Romb). (**)
+4.6 Opredelit' summu elementov zakrashennoj oblasti(treugol'nik). (*)
+
+5.0 Dan graf, predstavlennyj matricoj smezhnosti razmernosti (NxN).
+Opredelit', sushchestvuet li put'  v grafe iz zadannoj vershiny A  v vershinu B. (***).
+
+
+0.0 Дано три числа a,b,c, максимальное из них уменьшить на 2, минимальное увеличить на 2.
+0.1 Функция создания целочисленного массива и заполнения его случайными значениями в заданном диапазоне.
+0.2 Функция заполнения целочисленого массива случайными значениями в заданном диапазоне.
+0.3 Написать функцию удаления четных цифр в числе. (*)
+0.4 Написать функцию, которая проверяет, является ли заданное положительное число простым.  (*)
+
+1.0 Написать функцию поиска заданного элемента в целочисленном массиве. (*)
+1.1 Написать функцию поиска минимального значения в массиве. (*)
+1.2 Написать функцию подсчета суммы элементов массива. (*)
+1.3 Написать функцию подсчета произведения элементов массива. (*)
+1.4 Написать функцию, которая  определяет число, встречающееся максимальное количество раз. (**)
+1.5 Написать функцию проверки типа массива (возрастание, убывание, равенство). (*) 
+
+2.0   Написать функцию сортировки массива;
+2.1.0 Сортировка методом пузырька. (*)
+2.1.1 Сортировка пузырьком с улучшением. (**)
+2.1.2 Шейкерная сортировка. (***)
+2.2   Сортировка методом прямой вставки. (*)
+
+4.0 Дано матрица NxM, найти позицию минимального элемента. (*)
+4.1 Определить сумму элементов главной диагонали + элементов под побочной диагональю. (*)
+4.2 Определить сумму элементов побочной диагонали + элементов под побочной диагональю. (*)
+4.3 Определить сумму элементов закрашенной области(крест). (*)
+4.4 Определить сумму элементов закрашенной области(песочные часы). (*)
+4.5 Определить сумму элементов закрашенной области(Ромб). (**)
+4.6 Определить сумму элементов закрашенной области(треугольник). (*)
+
+5.0 Дан граф, представленный матрицой смежности размерности (NxN).
+Определить, существует ли путь  в графе из заданной вершины A  в вершину B. (***). 
