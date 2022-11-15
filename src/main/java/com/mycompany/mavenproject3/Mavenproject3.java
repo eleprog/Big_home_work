@@ -59,13 +59,35 @@ public class Mavenproject3
                 break;
             case ("0.4"):
                 break;
+                
+            case ("1.0"):
+                int[] array0 = {0,1,2,3,4,5,6,7,8,9};
+                IntWrite("Search index: ", SearchForArrayElement(array0, IntRead("Enter desired number: ")));
+                break;
+            case ("1.1"):
+                int[] array1 = {0,1,2,3,4,5,6,7,8,9};
+                IntWrite("Minimum value: ", SearchMinimumValue(array1));
+                break;
+            case ("1.2"):
+                int[] array2 = {0,1,2,3,4,5,6,7,8,9};
+                IntWrite("Sum of array elements: ", SumArrayElements(array2));
+                break;
+            case ("1.3"):
+                int[] array3 = {1,2,3,4,5,6,7,8,9};
+                IntWrite("Product of array elements: ", ProductArrayElements(array3));
+                break;
+            case ("1.4"):
+                break;
+            case ("1.5"):
+                
+                break;
 
             default:
                 System.out.print("Error: the selected task number does not exist");
         }
     }
 
-    static int[] SmallIncreaseTwoLargeDecreaseTwo(int a, int b, int c)
+    static int[] SmallIncreaseTwoLargeDecreaseTwo(int a, int b, int c) //(0.0)//
     {
         int[] data = {a,b,c};
         
@@ -101,7 +123,7 @@ public class Mavenproject3
         return data;
     }    
     
-    static int RemoveEvenNumbers(int numIn)
+    static int RemoveEvenNumbers(int numIn) //(0.3)//
     {
         int numOut = 0;
         int degree = 1;
@@ -115,6 +137,39 @@ public class Mavenproject3
             numIn /= 10;
         } 
         return numOut;
+    }
+    
+    static int SearchForArrayElement(int[] arr, int value) //(1.0)//
+    {
+        for(int i = 0; i < arr.length; i++)
+            if(arr[i] == value)
+                return i;
+        return -1;
+    }
+
+    static int SearchMinimumValue(int[] arr) //(1.1)//
+    {
+        int tmp = arr[0];
+        for(int i = 1; i < arr.length; i++)
+            if(arr[i] < tmp)
+                tmp = arr[i];
+        return tmp;
+    }
+    
+    static int SumArrayElements(int[] arr) //(1.2)//
+    {
+        int sum = 0;
+        for(int i = 0; i < arr.length; i++)
+            sum += arr[i];
+        return sum;
+    }
+    
+    static int ProductArrayElements(int[] arr) //(1.3)//
+    {
+        int product = arr[0];
+        for(int i = 1; i < arr.length; i++)
+            product *= arr[i];
+        return product;
     }
     
     static int traversal_diagonal(int arr[][])
@@ -178,7 +233,6 @@ public class Mavenproject3
                 sum += arr[len / 2 + 1][i];
                 System.out.print(arr[len / 2 + 1][i] + ", ");
             }
-
         }
         return sum;
     }
@@ -188,34 +242,5 @@ public class Mavenproject3
     {
         MenuOutput();
         TaskSelection();
-
-
-
-
-
-
-
-        /*int [][] matrix ={{1,2,3,4,5,6,7},
-                          {1,2,3,4,5,6,7},
-                          {1,2,3,4,5,6,7},
-                          {1,2,3,4,5,6,7},
-                          {1,2,3,4,5,6,7},
-                          {1,2,3,4,5,6,7},
-                          {1,2,3,4,5,6,7}};*/
-
-        /*int [][] matrix ={{1,2,3,4,5,6,7,8},
-                          {1,2,3,4,5,6,7,8},
-                          {1,2,3,4,5,6,7,8},
-                          {1,2,3,4,5,6,7,8},
-                          {1,2,3,4,5,6,7,8},
-                          {1,2,3,4,5,6,7,8},
-                          {1,2,3,4,5,6,7,8},
-                          {1,2,3,4,5,6,7,8}};
-
-        System.out.println("sum: " + traversal_diagonal(matrix));
-        System.out.println();
-        System.out.println("sum: " + traversal_hourglass(matrix));
-        System.out.println();
-        System.out.println("sum: " + traversal_rhombus(matrix));*/
     }
 }
