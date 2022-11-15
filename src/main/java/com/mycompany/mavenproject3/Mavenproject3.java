@@ -22,12 +22,17 @@ public class Mavenproject3
     
     static void Write(String a, int value)
     {
-        System.out.print(a + value + " ");
+        System.out.print(a + value);
     }
     
     static void Write(String a, boolean value)
     {
-        System.out.print(a + value + " ");
+        System.out.print(a + value);
+    }
+    
+    static void Write(String a, String b, String c, int[] value)
+    {
+        System.out.print(a + value[0] + " " + b + value[1] + " " + c + value[2]);
     }
     
     
@@ -47,17 +52,13 @@ public class Mavenproject3
         switch (task)
         {
             case ("0.0"):
-                int a = IntRead("Enter A: ");
-                int b = IntRead("Enter B: ");
-                int c = IntRead("Enter C: ");
-                int[] data = SmallIncreaseTwoLargeDecreaseTwo(a, b, c);
-                Write("A = ", data[0]);
-                Write("B = ", data[1]);
-                Write("C = ", data[2]);
+                int[] data = SmallIncreaseTwoLargeDecreaseTwo(IntRead("Enter A: "), IntRead("Enter B: "), IntRead("Enter C: "));
+                Write("A = ", "B = ", "C = ",data);
                 
                 break;
             case ("0.1"):
                 break;
+                
             case ("0.2"):
                 break;
                 
@@ -95,9 +96,55 @@ public class Mavenproject3
                 break;
                 
             case ("1.5"):
-                
                 break;
-
+                
+            case ("2.0"):
+                break;
+                
+            case ("2.1"):
+                break;
+                
+            case ("2.2"):
+                break;
+                
+            case ("2.3"):
+                break;
+                
+            case ("2.4"):
+                break;
+      
+            case ("3.0"):
+                int[][] matrix0 = {{1,2,3,4,5,6,7},
+                                   {1,2,3,4,5,6,7},
+                                   {1,2,0,4,5,6,7},					 
+                                   {1,2,3,4,5,6,7},
+                                   {1,2,3,4,5,6,7}};
+                Write("Most frequent value: ", MostFrequentValue(matrix0));
+                break;
+                
+            case ("3.1"):
+                int[][] matrix0 = {{1,2,3,4,5},
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5},					 
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5}};
+                break;
+                
+            case ("3.2"):
+                break;
+                
+            case ("3.3"):
+                break;
+                
+            case ("3.4"):
+                break;
+                
+            case ("3.5"):
+                break;
+                
+            case ("3.6"):
+                break;
+                
             default:
                 System.out.print("Error: the selected task number does not exist");
         }
@@ -234,7 +281,7 @@ public class Mavenproject3
         }                    
     }
     
-    static int traversal_diagonal(int arr[][])
+    static int TraversalMostDiagonal(int arr[][])
     {
         int sum = 0;
         for(int i = 0; i < arr.length; i++)
@@ -249,7 +296,7 @@ public class Mavenproject3
         return sum;
     }
 
-    static int traversal_hourglass(int arr[][])
+    static int TraversalHourglass(int arr[][])
     {
         int sum = 0;
         int len = arr.length;
@@ -273,7 +320,7 @@ public class Mavenproject3
         return sum;
     }
 
-    static int traversal_rhombus(int arr[][])
+    static int TraversalRhombus(int arr[][])
     {
         int sum = 0;
         int len = arr.length;
@@ -299,7 +346,6 @@ public class Mavenproject3
         return sum;
     }
 
-   
     public static void main(String[] args) throws FileNotFoundException, IOException
     {
         MenuOutput();
