@@ -35,6 +35,10 @@ public class Mavenproject3
         System.out.print(a + value[0] + " " + b + value[1] + " " + c + value[2]);
     }
     
+    static void Write(String a, String b, int[] value)
+    {
+        System.out.print(a + value[0] + " " + b + value[1]);
+    }
     
      static void MenuOutput() throws FileNotFoundException, IOException
     {
@@ -116,14 +120,14 @@ public class Mavenproject3
             case ("3.0"):
                 int[][] matrix0 = {{1,2,3,4,5,6,7},
                                    {1,2,3,4,5,6,7},
-                                   {1,2,0,4,5,6,7},					 
                                    {1,2,3,4,5,6,7},
+                                   {1,2,3,4,5,6,0},
                                    {1,2,3,4,5,6,7}};
-                Write("Most frequent value: ", MostFrequentValue(matrix0));
+                Write("Row: ", "Column: ", MinimumElementPosition(matrix0));
                 break;
                 
             case ("3.1"):
-                int[][] matrix0 = {{1,2,3,4,5},
+                int[][] matrix1 = {{1,2,3,4,5},
                                    {1,2,3,4,5},
                                    {1,2,3,4,5},					 
                                    {1,2,3,4,5},
@@ -278,7 +282,23 @@ public class Mavenproject3
                     frequentValueAmount = tmp;
                 } 
             }             
-        }                    
+        }  
+        return frequentValue;
+    }
+    
+    static int[] MinimumElementPosition(int[][] mtrx)
+    {
+        int tmp = mtrx[0][0];
+        int[] pos = new int[2];
+        for(int i = 0; i < mtrx.length; i++)
+            for(int j = 0; j < mtrx[0].length; j++)
+                if(mtrx[i][j] < tmp)
+                {
+                    tmp = mtrx[i][j];
+                    pos[0] = i;
+                    pos[1] = j;
+                }
+        return pos;                
     }
     
     static int TraversalMostDiagonal(int arr[][])
