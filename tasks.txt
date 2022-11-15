@@ -18,7 +18,7 @@
 2.4 Sortirovka metodom pryamoj vstavki. (*)
 
 3.0 Dano matrica NxM, najti poziciyu minimal'nogo elementa. (*)
-3.1 Opredelit' summu elementov glavnoj diagonali + elementov pod pobochnoj diagonal'yu. (*)
+3.1 Opredelit' summu elementov glavnoj diagonali + elementov pod glavnoj diagonal'yu. (*)
 3.2 Opredelit' summu elementov pobochnoj diagonali + elementov pod pobochnoj diagonal'yu. (*)
 3.3 Opredelit' summu elementov zakrashennoj oblasti(krest). (*)
 3.4 Opredelit' summu elementov zakrashennoj oblasti(pesochnye chasy). (*)
