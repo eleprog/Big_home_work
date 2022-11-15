@@ -20,10 +20,16 @@ public class Mavenproject3
         return tmp;
     }
     
-    static void IntWrite(String a, int value)
+    static void Write(String a, int value)
     {
         System.out.print(a + value + " ");
-    }    
+    }
+    
+    static void Write(String a, boolean value)
+    {
+        System.out.print(a + value + " ");
+    }
+    
     
      static void MenuOutput() throws FileNotFoundException, IOException
     {
@@ -45,39 +51,49 @@ public class Mavenproject3
                 int b = IntRead("Enter B: ");
                 int c = IntRead("Enter C: ");
                 int[] data = SmallIncreaseTwoLargeDecreaseTwo(a, b, c);
-                IntWrite("A = ", data[0]);
-                IntWrite("B = ", data[1]);
-                IntWrite("C = ", data[2]);
+                Write("A = ", data[0]);
+                Write("B = ", data[1]);
+                Write("C = ", data[2]);
                 
                 break;
             case ("0.1"):
                 break;
             case ("0.2"):
                 break;
+                
             case ("0.3"):
-                IntWrite("Number without even: ", RemoveEvenNumbers(IntRead("Enter number: ")));
+                Write("Number without even: ", RemoveEvenNumbers(IntRead("Enter number: ")));
                 break;
+                
             case ("0.4"):
+                Write("Number prime: ", CheckNumberPrime(IntRead("Enter number: ")));
                 break;
                 
             case ("1.0"):
                 int[] array0 = {0,1,2,3,4,5,6,7,8,9};
-                IntWrite("Search index: ", SearchForArrayElement(array0, IntRead("Enter desired number: ")));
+                Write("Search index: ", SearchForArrayElement(array0, IntRead("Enter desired number: ")));
                 break;
+                
             case ("1.1"):
                 int[] array1 = {0,1,2,3,4,5,6,7,8,9};
-                IntWrite("Minimum value: ", SearchMinimumValue(array1));
+                Write("Minimum value: ", SearchMinimumValue(array1));
                 break;
+                
             case ("1.2"):
                 int[] array2 = {0,1,2,3,4,5,6,7,8,9};
-                IntWrite("Sum of array elements: ", SumArrayElements(array2));
+                Write("Sum of array elements: ", SumArrayElements(array2));
                 break;
+                
             case ("1.3"):
                 int[] array3 = {1,2,3,4,5,6,7,8,9};
-                IntWrite("Product of array elements: ", ProductArrayElements(array3));
+                Write("Product of array elements: ", ProductArrayElements(array3));
                 break;
+                
             case ("1.4"):
+                int[] array4 = {0,1,2,3,4,5,6,7,8,9};
+                Write("Most frequent value: ", MostFrequentValue(array4));
                 break;
+                
             case ("1.5"):
                 
                 break;
@@ -139,6 +155,15 @@ public class Mavenproject3
         return numOut;
     }
     
+    static boolean CheckNumberPrime(int value) //(0.4)//
+    {
+        for(int i = 2; i <= value / 2; i++)
+            if(value % i == 0)
+                return false;
+        
+        return true;
+    }
+            
     static int SearchForArrayElement(int[] arr, int value) //(1.0)//
     {
         for(int i = 0; i < arr.length; i++)
@@ -150,9 +175,19 @@ public class Mavenproject3
     static int SearchMinimumValue(int[] arr) //(1.1)//
     {
         int tmp = arr[0];
+        boolean elemEqualityFlag = true;
+        
+        for(int i = 1; i < arr.length && elemEqualityFlag; i++)
+            if(arr[i] != tmp)
+                elemEqualityFlag = false;
+        
+        if(elemEqualityFlag)
+            return -1;
+        
         for(int i = 1; i < arr.length; i++)
             if(arr[i] < tmp)
                 tmp = arr[i];
+        
         return tmp;
     }
     
@@ -164,12 +199,39 @@ public class Mavenproject3
         return sum;
     }
     
-    static int ProductArrayElements(int[] arr) //(1.3)//
+    static int ProductArrayElements(int[] arr) //(1.3)//         
     {
         int product = arr[0];
         for(int i = 1; i < arr.length; i++)
             product *= arr[i];
         return product;
+    }
+    
+    static int MostFrequentValue(int[] arr) //(1.4)//
+    {
+        int frequentValue = arr[0];
+        int frequentValueAmount = 1;
+        boolean[] flags = new boolean[arr.length];
+        
+        for(int i = 0; i < arr.length; i++)
+        {
+            if(!flags[i])
+            {
+                int tmp = 0;
+                for(int j = i; j < arr.length; j++)
+                    if(arr[i] == arr[j])
+                    {
+                        flags[j] = true;
+                        tmp++;
+                    }
+                
+                if(tmp > frequentValueAmount)
+                {
+                    frequentValue = arr[i];
+                    frequentValueAmount = tmp;
+                } 
+            }             
+        }                    
     }
     
     static int traversal_diagonal(int arr[][])
