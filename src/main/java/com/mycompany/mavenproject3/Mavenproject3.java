@@ -289,7 +289,7 @@ public class Mavenproject3
     static int ProductArrayElements(int[] arr) //(1.3)//         
     {
         if(arr == null)
-            return 0;
+            return -1;
         
         int product = arr[0];
         for(int i = 1; i < arr.length; i++)
@@ -301,14 +301,13 @@ public class Mavenproject3
     static int MostFrequentValue(int[] arr) //(1.4)//
     { 
         if(arr == null)
-            return 0;
+            return -1;
         
         int frequentValue = arr[0];
         int frequentValueAmount = 1;
         boolean[] flags = new boolean[arr.length];
 
         for(int i = 0; i < arr.length; i++)
-        {
             if(!flags[i])
             {
                 int tmp = 0;
@@ -324,8 +323,7 @@ public class Mavenproject3
                     frequentValue = arr[i];
                     frequentValueAmount = tmp;
                 } 
-            }             
-        }  
+            }              
         return frequentValue;  
     }
     
