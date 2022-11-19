@@ -1,14 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
- */
-
 package com.mycompany.task_3_1;
 
-/**
- *
- * @author Eugene
- */
 public class Task_3_1 
 {
     static int TraversalMostDiagonal(int mtrx[][])
