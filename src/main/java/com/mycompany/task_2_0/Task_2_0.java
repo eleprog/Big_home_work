@@ -1,8 +1,7 @@
 package com.mycompany.task_2_0;
 
 public class Task_2_0 
-{
-    
+{    
     static void BubbleSort(int[] arr)
     {
         if(arr == null || arr.length < 2)
