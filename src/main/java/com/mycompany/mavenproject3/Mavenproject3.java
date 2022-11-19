@@ -113,6 +113,13 @@ public class Mavenproject3
                 break;
                 
             case ("1.5"):
+                int[] array5 = {0,1,2,3,4,5,6,7,8,9};             
+                int type = ArrayTypeDefinition(array5);
+                
+                if(type == 1) System.out.println("Array increasing");
+                else if(type == 0) System.out.println("All array elements are equal");
+                else if(type == -1) System.out.println("Array decreasing");
+                else System.out.println("Array is not ordered");
                 break;
                 
             case ("2.0"):
@@ -325,6 +332,31 @@ public class Mavenproject3
                 } 
             }              
         return frequentValue;  
+    }
+    
+    static int ArrayTypeDefinition(int[] arr) //(1.5)//
+    {
+        if(arr == null || arr.length < 2)
+            return -2;
+        
+        if(arr[0] == arr[1])
+        {
+            for(int i = 2; i < arr.length; i++)
+                if(arr[i] != arr[0])
+                    return -2;
+            return 0;
+        }
+        if(arr[0] > arr[1])
+        {
+            for(int i = 2; i < arr.length; i++)
+                if(arr[i-1] <= arr[i])
+                    return -2;    
+            return -1;
+        }                    
+        for(int i = 2; i < arr.length; i++)
+            if(arr[i-1] >= arr[i])
+                return -2;
+        return 1;
     }
     
     static int[] MinimumElementPosition(int[][] mtrx) //(3.0)//
