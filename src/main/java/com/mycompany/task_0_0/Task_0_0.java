@@ -35,7 +35,7 @@ public class Task_0_0
                         data[2] += 2;
                     else                    // a<b b>c a<c
                         data[0] += 2;
-                }   
+                }
         return data;
     }    
 
@@ -51,6 +51,6 @@ public class Task_0_0
 
         int[] value = SmallIncreaseTwoLargeDecreaseTwo(a, b, c);
         
-        System.out.print("A: " + value[0] + "  B: " + value[1] + "  C: " + value[2]);
+        System.out.print("\nA: " + value[0] + "  B: " + value[1] + "  C: " + value[2]);
     }
 }
