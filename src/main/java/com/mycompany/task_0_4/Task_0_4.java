@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Task_0_4 
 {
-    static boolean CheckNumberPrime(int value) //(0.4)//
+    static boolean CheckNumberPrime(int value)
     {
         if(value < 2)
             return false;
@@ -14,9 +14,9 @@ public class Task_0_4
         
         return true;
     }
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
-        Scanner myScnr = new Scanner(System.in);  
+        Scanner myScnr = new Scanner(System.in);
         
         System.out.print("Enter the number: ");
         int number = myScnr.nextInt();
