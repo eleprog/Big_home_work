@@ -155,6 +155,12 @@ public class Mavenproject3
                 break;
                 
             case ("3.2"):
+                int[][] matrix2 = {{1,2,3,4,5},
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5},					 
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5}};
+                Write("Sum elements under secondary diagonal: ", TraversalSecondaryDiagonal(matrix2));
                 break;
                 
             case ("3.3"):
@@ -460,7 +466,7 @@ public class Mavenproject3
         return pos;
     }
     
-    static int TraversalMostDiagonal(int mtrx[][])
+    static int TraversalMostDiagonal(int mtrx[][]) //(3.1)//
     {
         int sum = 0;   
         if(mtrx == null)
@@ -471,6 +477,17 @@ public class Mavenproject3
         return sum;
     }
 
+    static int TraversalSecondaryDiagonal(int mtrx[][]) //(3.2)//
+    {
+        int sum = 0;   
+        if(mtrx == null || (mtrx.length != mtrx[0].length))
+            return sum;
+        for(int i = 0; i < mtrx.length; i++)
+            for(int j = 0; j <= i; j++)
+                sum += mtrx[i][mtrx.length - j - 1];
+        return sum;
+    }
+    
     static int TraversalHourglass(int arr[][])
     {
         int sum = 0;
