@@ -9,7 +9,7 @@ public class Task_3_4
             return sum;
         
         int indexHi = mtrx.length - 1;
-        for(int i = 0; i < mtrx.length / 2; i++)     
+        for(int i = 0; i < mtrx.length / 2; i++)
             for(int j = i; j <= indexHi - i; j++)
             {
                 sum += mtrx[i][j];
