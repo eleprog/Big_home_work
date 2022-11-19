@@ -131,6 +131,9 @@ public class Mavenproject3
                 break;
                 
             case ("2.2"):
+                int[] array8 = {9,8,7,6,5,4,3,2,1,0};
+                DirectBinarySearchSort(array8);
+                Write("Sort array: ", array8);
                 break;
                 
             case ("3.0"):
@@ -409,10 +412,43 @@ public class Mavenproject3
         }
     }
     
-    static int[] MinimumElementPosition(int[][] mtrx) //(3.0)//
+    static void DirectBinarySearchSort(int[] arr) //(2.2)//
     {
-        int tmp = mtrx[0][0];
-        int[] pos = new int[2];
+        if(arr == null || arr.length < 2)
+            return;
+        
+        for(int sortedPart = 1; sortedPart < arr.length; sortedPart++)
+        {        
+            int tmp = arr[sortedPart];
+            int index = 0;
+            int highIndex = sortedPart;
+            
+            while(index <= highIndex)
+            {
+                int tmpIndex = (highIndex + index) / 2;
+                if(tmp > arr[tmpIndex])
+                    index = tmpIndex + 1;
+                else if(tmp < arr[tmpIndex])
+                    highIndex = tmpIndex - 1;
+                else
+                {
+                    index = tmpIndex;
+                    highIndex = tmpIndex - 1;
+                }
+            }
+            for(int i = sortedPart; i > index; i--)
+                arr[i] = arr[i-1];
+            arr[index] = tmp;
+        }
+    }
+    
+    static int[] MinimumElementPosition(int[][] mtrx)
+    {
+        int[] pos = {0,0};
+        if (mtrx == null)
+            return pos;
+        
+        int tmp = mtrx[0][0]; 
         for(int i = 0; i < mtrx.length; i++)
             for(int j = 0; j < mtrx[0].length; j++)
                 if(mtrx[i][j] < tmp)
@@ -421,7 +457,7 @@ public class Mavenproject3
                     pos[0] = i;
                     pos[1] = j;
                 }
-        return pos;                
+        return pos;
     }
     
     static int TraversalMostDiagonal(int arr[][]) //(3.1)//
