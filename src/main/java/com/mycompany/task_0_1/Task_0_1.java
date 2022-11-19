@@ -9,7 +9,7 @@ public class Task_0_1 {
             
         int[] arr = new int[size];
         for(int i = 0; i < size; i++)
-            arr[i] = rangeLo + (int)(Math.random() * rangeHi); // Генерация 1-го числа
+            arr[i] = rangeLo + (int)(Math.random() * rangeHi);
   
         return arr;
     }
