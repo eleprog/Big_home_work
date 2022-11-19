@@ -11,7 +11,7 @@ package com.mycompany.task_3_1;
  */
 public class Task_3_1 
 {
-    static int TraversalMostDiagonal(int arr[][]) //(3.1)//
+    static int TraversalMostDiagonal(int arr[][])
     {
         int sum = 0;   
         if(arr == null)
