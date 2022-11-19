@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Task_0_3 
 {
-    static int RemoveEvenNumbers(int numIn) //(0.3)//
+    static int RemoveEvenNumbers(int numIn)
     {
         int numOut = 0;
         int degree = 1;
