@@ -2,7 +2,7 @@ package com.mycompany.task_0_1;
 
 public class Task_0_1 {
 
-    public static int[] create_array(int size, int rangeLo, int rangeHi)
+    public static int[] CreateArray(int size, int rangeLo, int rangeHi)
     {
         if(size == 0)
             return null;
@@ -14,7 +14,7 @@ public class Task_0_1 {
         return arr;
     }
     
-    public static void print_array(int[] arr)
+    public static void PrintArray(int[] arr)
     {
         if(arr != null)
             for(int i = 0; i < arr.length; i++)
@@ -25,7 +25,7 @@ public class Task_0_1 {
     
     public static void main(String[] args)
     {
-        int[] array = create_array(10, 15, 256);
-        print_array(array);
+        int[] array = CreateArray(10, 15, 256);
+        PrintArray(array);
     }
 }
