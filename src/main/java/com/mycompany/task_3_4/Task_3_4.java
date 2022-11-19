@@ -2,7 +2,7 @@ package com.mycompany.task_3_4;
 
 public class Task_3_4 
 {
-    static int TraversalСrossDiagonal(int mtrx[][])
+    static int TraversalHourglass(int mtrx[][])
     {
         int sum = 0;   
         if(mtrx == null || (mtrx.length != mtrx[0].length))
@@ -36,6 +36,6 @@ public class Task_3_4
                           {9,1,1,1,1,9},
                           {1,1,1,1,1,1}};*/
         
-        System.out.println(TraversalСrossDiagonal(matrix));
+        System.out.println(TraversalHourglass(matrix));
     }
 }
