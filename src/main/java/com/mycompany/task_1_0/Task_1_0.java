@@ -1,7 +1,7 @@
 package com.mycompany.task_1_0;
 import java.util.Scanner;
 
-public class Task_1_0 
+public class Task_1_0
 {
     static int SearchForArrayElement(int[] arr, int value)
     {
