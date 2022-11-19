@@ -47,7 +47,7 @@ public class Mavenproject3
     static void MenuOutput() throws FileNotFoundException, IOException
     {
         FileInputStream file = new FileInputStream("tasks.txt");
-        byte[] filein = new byte[1761];
+        byte[] filein = new byte[1760];
         file.read(filein);
         int len = filein.length;
         for(int i = 0; i < len; i++)
@@ -442,7 +442,7 @@ public class Mavenproject3
         }
     }
     
-    static int[] MinimumElementPosition(int[][] mtrx)
+    static int[] MinimumElementPosition(int[][] mtrx) //(3.0)//
     {
         int[] pos = {0,0};
         if (mtrx == null)
@@ -460,18 +460,14 @@ public class Mavenproject3
         return pos;
     }
     
-    static int TraversalMostDiagonal(int arr[][]) //(3.1)//
+    static int TraversalMostDiagonal(int mtrx[][])
     {
-        int sum = 0;
-        for(int i = 0; i < arr.length; i++)
-        {
+        int sum = 0;   
+        if(mtrx == null)
+            return sum; 
+        for(int i = 0; i < mtrx.length; i++)
             for(int j = 0; j <= i; j++)
-            {
-                sum += arr[i][j];
-                System.out.print(arr[i][j] + ", ");
-            }
-        System.out.println();
-        }
+                sum += mtrx[i][j];
         return sum;
     }
 
