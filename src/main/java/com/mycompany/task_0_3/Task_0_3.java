@@ -15,7 +15,7 @@ public class Task_0_3
                 degree *= 10;
             }
             numIn /= 10;
-        } 
+        }
         return numOut;
     }
     
