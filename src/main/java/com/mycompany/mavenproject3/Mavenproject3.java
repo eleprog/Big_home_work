@@ -125,17 +125,14 @@ public class Mavenproject3
                 break;
                 
             case ("2.1"):
+                int[] array7 = {9,8,7,6,5,4,3,2,1,0};
+                ShakerSort(array7);
+                Write("Sort array: ", array7);
                 break;
                 
             case ("2.2"):
                 break;
                 
-            case ("2.3"):
-                break;
-                
-            case ("2.4"):
-                break;
-      
             case ("3.0"):
                 int[][] matrix0 = {{1,2,3,4,5,6,7},
                                    {1,2,3,4,5,6,7},
@@ -376,6 +373,39 @@ public class Mavenproject3
                     lastSwapTmp = i;
                 }
             lastSwap = lastSwapTmp;
+        }
+    }
+    
+    static void ShakerSort(int[] arr) //(2.1)//
+    {
+        if(arr == null || arr.length < 2)
+            return;
+        
+        int lastLoSwap = 0;
+        int lastHiSwap = arr.length-1;
+        
+        while(lastLoSwap != lastHiSwap)
+        {
+            int lastSwapTmp = 0;
+            for(int i = lastLoSwap; i < lastHiSwap; i++)
+                 if(arr[i] > arr[i+1])
+                 {
+                     int swapTmp = arr[i];
+                     arr[i] = arr[i+1];
+                     arr[i+1] = swapTmp;
+                     lastSwapTmp = i;
+                 }
+            lastHiSwap = lastSwapTmp;
+            
+            for(int i = lastHiSwap; i > lastLoSwap; i--)
+                 if(arr[i] < arr[i-1])
+                 {
+                     int swapTmp = arr[i-1];
+                     arr[i-1] = arr[i];
+                     arr[i] = swapTmp;
+                     lastSwapTmp = i;
+                 }
+            lastLoSwap = lastSwapTmp;           
         }
     }
     
