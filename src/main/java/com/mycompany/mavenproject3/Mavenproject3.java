@@ -250,24 +250,26 @@ public class Mavenproject3
             
     static int SearchForArrayElement(int[] arr, int value) //(1.0)//
     {
-        for(int i = 0; i < arr.length; i++)
-            if(arr[i] == value)
-                return i;
+        if(arr != null)
+            for(int i = 0; i < arr.length; i++)
+                if(arr[i] == value)
+                    return i;
         return -1;
     }
 
     static int SearchMinimumValue(int[] arr) //(1.1)//
     {
-        int tmp = arr[0];
+        if(arr == null)
+            return -1;
+        
         boolean elemEqualityFlag = true;
-        
         for(int i = 1; i < arr.length && elemEqualityFlag; i++)
-            if(arr[i] != tmp)
+            if(arr[0] != arr[i])
                 elemEqualityFlag = false;
-        
         if(elemEqualityFlag)
             return -1;
         
+        int tmp = arr[0]; 
         for(int i = 1; i < arr.length; i++)
             if(arr[i] < tmp)
                 tmp = arr[i];
@@ -286,46 +288,45 @@ public class Mavenproject3
     
     static int ProductArrayElements(int[] arr) //(1.3)//         
     {
-        if(arr != null)
-        {
-            int product = arr[0];
-            for(int i = 1; i < arr.length; i++)
-                product *= arr[i];
-            return product;
-        }
-        return 0;
+        if(arr == null)
+            return 0;
+        
+        int product = arr[0];
+        for(int i = 1; i < arr.length; i++)
+            product *= arr[i];
+        
+        return product;     
     }
     
     static int MostFrequentValue(int[] arr) //(1.4)//
     { 
-        if(arr != null)
-        {
-            int frequentValue = arr[0];
-            int frequentValueAmount = 1;
-            boolean[] flags = new boolean[arr.length];
-            
-            for(int i = 0; i < arr.length; i++)
-            {
-                if(!flags[i])
-                {
-                    int tmp = 0;
-                    for(int j = i; j < arr.length; j++)
-                        if(arr[i] == arr[j])
-                        {
-                            flags[j] = true;
-                            tmp++;
-                        }
+        if(arr == null)
+            return 0;
+        
+        int frequentValue = arr[0];
+        int frequentValueAmount = 1;
+        boolean[] flags = new boolean[arr.length];
 
-                    if(tmp > frequentValueAmount)
+        for(int i = 0; i < arr.length; i++)
+        {
+            if(!flags[i])
+            {
+                int tmp = 0;
+                for(int j = i; j < arr.length; j++)
+                    if(arr[i] == arr[j])
                     {
-                        frequentValue = arr[i];
-                        frequentValueAmount = tmp;
-                    } 
-                }             
-            }  
-            return frequentValue;
-        }
-        return 0;
+                        flags[j] = true;
+                        tmp++;
+                    }
+
+                if(tmp > frequentValueAmount)
+                {
+                    frequentValue = arr[i];
+                    frequentValueAmount = tmp;
+                } 
+            }             
+        }  
+        return frequentValue;  
     }
     
     static int[] MinimumElementPosition(int[][] mtrx) //(3.0)//
