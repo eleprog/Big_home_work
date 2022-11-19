@@ -11,14 +11,14 @@ package com.mycompany.task_3_1;
  */
 public class Task_3_1 
 {
-    static int TraversalMostDiagonal(int arr[][])
+    static int TraversalMostDiagonal(int mtrx[][])
     {
         int sum = 0;   
-        if(arr == null)
+        if(mtrx == null)
             return sum; 
-        for(int i = 0; i < arr.length; i++)
+        for(int i = 0; i < mtrx.length; i++)
             for(int j = 0; j <= i; j++)
-                sum += arr[i][j];
+                sum += mtrx[i][j];
         return sum;
     }
     
