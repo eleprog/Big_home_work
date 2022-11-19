@@ -4,6 +4,9 @@ public class Task_2_1
 {
     static void ShakerSort(int[] arr)
     {
+        if(arr == null || arr.length < 2)
+            return;
+        
         int lastLoSwap = 0;
         int lastHiSwap = arr.length-1;
         
