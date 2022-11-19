@@ -47,7 +47,7 @@ public class Mavenproject3
     static void MenuOutput() throws FileNotFoundException, IOException
     {
         FileInputStream file = new FileInputStream("tasks.txt");
-        byte[] filein = new byte[1760];
+        byte[] filein = new byte[1759];
         file.read(filein);
         int len = filein.length;
         for(int i = 0; i < len; i++)
@@ -164,6 +164,12 @@ public class Mavenproject3
                 break;
                 
             case ("3.3"):
+                int[][] matrix3 = {{1,2,3,4,5},
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5},					 
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5}};
+                Write("Sum elements cross diagonal: ", TraversalСrossDiagonal(matrix3));
                 break;
                 
             case ("3.4"):
@@ -485,6 +491,25 @@ public class Mavenproject3
         for(int i = 0; i < mtrx.length; i++)
             for(int j = 0; j <= i; j++)
                 sum += mtrx[i][mtrx.length - j - 1];
+        return sum;
+    }
+    
+    static int TraversalСrossDiagonal(int mtrx[][])
+    {
+        int sum = 0;   
+        if(mtrx == null || (mtrx.length != mtrx[0].length))
+            return sum;
+        
+        int indexHi = mtrx.length - 1;
+        for(int i = 0; i < mtrx.length / 2; i++)
+        {
+            sum += mtrx[i][i];  
+            sum += mtrx[i][indexHi - i];
+            sum += mtrx[indexHi - i][i];
+            sum += mtrx[indexHi - i][indexHi - i];
+        }
+        if(mtrx.length % 2 == 1)
+            sum += mtrx[indexHi/2][indexHi/2];
         return sum;
     }
     
