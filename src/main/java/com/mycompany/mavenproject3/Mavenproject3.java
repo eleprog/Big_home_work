@@ -173,6 +173,12 @@ public class Mavenproject3
                 break;
                 
             case ("3.4"):
+                int[][] matrix4 = {{1,2,3,4,5},
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5},					 
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5}};
+                Write("Sum elements: ", TraversalHourglass(matrix4));
                 break;
                 
             case ("3.5"):
@@ -494,7 +500,7 @@ public class Mavenproject3
         return sum;
     }
     
-    static int TraversalСrossDiagonal(int mtrx[][])
+    static int TraversalСrossDiagonal(int mtrx[][]) //(3.3)//
     {
         int sum = 0;   
         if(mtrx == null || (mtrx.length != mtrx[0].length))
@@ -513,27 +519,22 @@ public class Mavenproject3
         return sum;
     }
     
-    static int TraversalHourglass(int arr[][])
+    static int TraversalHourglass(int mtrx[][]) //(3.4)//
     {
-        int sum = 0;
-        int len = arr.length;
-        for(int i = 0; i < len / 2; i++)
-        {
-            for(int j = i; j < len - i; j++)
+        int sum = 0;   
+        if(mtrx == null || (mtrx.length != mtrx[0].length))
+            return sum;
+        
+        int indexHi = mtrx.length - 1;
+        for(int i = 0; i < mtrx.length / 2; i++)
+            for(int j = i; j <= indexHi - i; j++)
             {
-                sum += arr[i][j];
-                System.out.print(arr[i][j] + ", ");
-                sum += arr[len - i - 1][j];
-                System.out.print(arr[len - i - 1][j] + ", ");
+                sum += mtrx[i][j];
+                sum += mtrx[indexHi - i][j];        
             }
-            System.out.println();
-        }
-        if(len % 2 > 0)
-        {
-            sum += arr[len / 2][len / 2];
-            System.out.print(arr[len / 2][len / 2] + "\n");
-
-        }
+        
+        if(mtrx.length % 2 == 1)
+            sum += mtrx[indexHi/2][indexHi/2];
         return sum;
     }
 
