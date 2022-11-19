@@ -5,8 +5,9 @@ public class Task_3_1
     static int TraversalMostDiagonal(int mtrx[][])
     {
         int sum = 0;   
-        if(mtrx == null)
-            return sum; 
+        if(mtrx == null || (mtrx.length != mtrx[0].length))
+            return sum;
+        
         for(int i = 0; i < mtrx.length; i++)
             for(int j = 0; j <= i; j++)
                 sum += mtrx[i][j];
