@@ -20,13 +20,11 @@ public class Mavenproject3
         return tmp;
     }
     
-    static void Write(String a, int value)
-    {
+    static void Write(String a, int value){
         System.out.print(a + value);
     }
     
-    static void Write(String a, boolean value)
-    {
+    static void Write(String a, boolean value){
         System.out.print(a + value);
     }
     
@@ -38,20 +36,18 @@ public class Mavenproject3
                 System.out.print(arr[i] + " ");
     }
     
-    static void Write(String a, String b, int[] value)
-    {
+    static void Write(String a, String b, int[] value){
         System.out.print(a + value[0] + " " + b + value[1]);
     }
     
-    static void Write(String a, String b, String c, int[] value)
-    {
+    static void Write(String a, String b, String c, int[] value){
         System.out.print(a + value[0] + " " + b + value[1] + " " + c + value[2]);
     }
     
     static void MenuOutput() throws FileNotFoundException, IOException
     {
         FileInputStream file = new FileInputStream("tasks.txt");
-        byte[] filein = new byte[1842];
+        byte[] filein = new byte[1761];
         file.read(filein);
         int len = filein.length;
         for(int i = 0; i < len; i++)
@@ -123,6 +119,9 @@ public class Mavenproject3
                 break;
                 
             case ("2.0"):
+                int[] array6 = {9,8,7,6,5,4,3,2,1,0};
+                BubbleSort(array6);
+                Write("Sort array: ", array6);
                 break;
                 
             case ("2.1"):
@@ -357,6 +356,27 @@ public class Mavenproject3
             if(arr[i-1] >= arr[i])
                 return -2;
         return 1;
+    }
+    
+    static void BubbleSort(int[] arr) //(2.0)//
+    {
+        if(arr == null || arr.length < 2)
+            return;
+        
+        int lastSwap = arr.length;
+        while(lastSwap > 0)
+        {
+            int lastSwapTmp = 0;
+            for(int i = 1; i < lastSwap; i++)       
+                if(arr[i-1] > arr[i])
+                {
+                    int swapTmp = arr[i-1];
+                    arr[i-1] = arr[i];
+                    arr[i] = swapTmp;
+                    lastSwapTmp = i;
+                }
+            lastSwap = lastSwapTmp;
+        }
     }
     
     static int[] MinimumElementPosition(int[][] mtrx) //(3.0)//
