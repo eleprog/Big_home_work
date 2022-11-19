@@ -30,9 +30,12 @@ public class Mavenproject3
         System.out.print(a + value);
     }
     
-    static void Write(String a, String b, String c, int[] value)
+    static void Write(String a, int[] arr)
     {
-        System.out.print(a + value[0] + " " + b + value[1] + " " + c + value[2]);
+        System.out.print(a);
+        if(arr != null)
+            for(int i = 0; i < arr.length; i++)
+                System.out.print(arr[i] + " ");
     }
     
     static void Write(String a, String b, int[] value)
@@ -40,7 +43,12 @@ public class Mavenproject3
         System.out.print(a + value[0] + " " + b + value[1]);
     }
     
-     static void MenuOutput() throws FileNotFoundException, IOException
+    static void Write(String a, String b, String c, int[] value)
+    {
+        System.out.print(a + value[0] + " " + b + value[1] + " " + c + value[2]);
+    }
+    
+    static void MenuOutput() throws FileNotFoundException, IOException
     {
         FileInputStream file = new FileInputStream("tasks.txt");
         byte[] filein = new byte[1842];
@@ -57,13 +65,18 @@ public class Mavenproject3
         {
             case ("0.0"):
                 int[] data = SmallIncreaseTwoLargeDecreaseTwo(IntRead("Enter A: "), IntRead("Enter B: "), IntRead("Enter C: "));
-                Write("A = ", "B = ", "C = ",data);
-                
+                Write("A = ", "B = ", "C = ",data);          
                 break;
+                
             case ("0.1"):
+                int[] data1 = CreateArray(IntRead("Enter size: "), IntRead("Enter low value: "), IntRead("Enter high value: "));
+                Write("Input array: ",data1);
                 break;
                 
             case ("0.2"):
+                int[] data2 = new int[IntRead("Enter size: ")];
+                FillArray(data2, IntRead("Enter low value: "), IntRead("Enter high value: "));
+                Write("Input array: ",data2);
                 break;
                 
             case ("0.3"):
@@ -191,6 +204,25 @@ public class Mavenproject3
         return data;
     }    
     
+    public static int[] CreateArray(int size, int rangeLo, int rangeHi) //(0.1)//
+    {
+        if(size == 0)
+            return null;
+            
+        int[] arr = new int[size];
+        for(int i = 0; i < size; i++)
+            arr[i] = rangeLo + (int)(Math.random() * rangeHi);
+  
+        return arr;
+    }
+    
+    public static void FillArray(int[] arr, int rangeLo, int rangeHi) //(0.2)//
+    {
+        if(arr != null)
+            for(int i = 0; i < arr.length; i++)
+                arr[i] = rangeLo + (int)(Math.random() * rangeHi);
+    }
+    
     static int RemoveEvenNumbers(int numIn) //(0.3)//
     {
         int numOut = 0;
@@ -287,7 +319,7 @@ public class Mavenproject3
         return frequentValue;
     }
     
-    static int[] MinimumElementPosition(int[][] mtrx)
+    static int[] MinimumElementPosition(int[][] mtrx) //(3.0)//
     {
         int tmp = mtrx[0][0];
         int[] pos = new int[2];
