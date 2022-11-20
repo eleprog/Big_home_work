@@ -191,8 +191,24 @@ public class Mavenproject3
                 break;
                 
             case ("3.6"):
+                int[][] matrix6 = {{1,2,3,4,5},
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5}};
+                Write("Sum elements: ", TraversalTriangle(matrix6));
                 break;
                 
+            case ("4.0"):
+                int[][] matrix7 = {{0,1,0,0,0,0},
+                                   {0,0,1,0,1,0},
+                                   {1,0,0,1,0,1},					 
+                                   {1,0,0,0,0,1},
+                                   {0,0,0,0,0,0},
+                                   {0,0,0,0,0,0}};
+                Write("Path found: ", SearchWay(matrix7, IntRead("First point: "), IntRead("Second point: ")));
+                break;    
+                       
             default:
                 System.out.print("Error: the selected task number does not exist");
         }
@@ -554,7 +570,7 @@ public class Mavenproject3
         int indexHi = mtrx.length - 1;
         
         for(int i = 0; i < len / 2; i++)
-            for(int j = indexHi / 2 - i; j <= mtrx.length / 2 + i; j++)
+            for(int j = indexHi / 2 - i; j <= len / 2 + i; j++)
             {
                 sum += mtrx[i][j];
                 sum += mtrx[indexHi - i][j];
@@ -566,6 +582,57 @@ public class Mavenproject3
         return sum;
     }
 
+    static int TraversalTriangle(int mtrx[][]) //(3.6)//
+    {
+        int sum = 0;
+        if(mtrx == null || (mtrx.length != mtrx[0].length))
+            return sum;
+        
+        int indexHi = mtrx.length - 1;
+        for(int i = 0; i < (mtrx.length + 1) / 2; i++)
+            for(int j = indexHi / 2 - i; j <= mtrx.length / 2 + i; j++)
+                sum += mtrx[i][j];
+        
+        return sum;
+    }
+    
+    public static int[] SearchWay(int[][] arr, int pointA, int pointB) //(4.0)//
+    {
+        if(arr == null)
+            return null;
+        
+        int len = arr.length;
+        int [] stack = new int[len];
+        int stackPointer = 0;
+        boolean [] flags = new boolean[len];
+        
+        stack[0] = pointA;
+        flags[pointA] = true;
+        
+        while(stackPointer >= 0)
+        {      
+            int tmp = -1;       
+            for(int i = 0; i < len && tmp == -1; i++)
+                if(arr[stack[stackPointer]][i] > 0 && !flags[i])
+                {
+                    tmp = i;
+                    stack[++stackPointer] = i;
+                    flags[i] = true;
+                }
+            
+            if(tmp == pointB)   
+            {
+                int[] a = new int[stackPointer + 1];
+                System.arraycopy(stack, 0, a, 0, stackPointer + 1);
+                return a;
+            }
+            
+            if(tmp == -1)
+                stackPointer--;
+        }   
+        return null;
+    }
+    
     public static void main(String[] args) throws FileNotFoundException, IOException
     {
         MenuOutput();
