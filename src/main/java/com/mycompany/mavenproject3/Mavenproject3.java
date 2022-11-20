@@ -148,7 +148,7 @@ public class Mavenproject3
             case ("3.1"):
                 int[][] matrix1 = {{1,2,3,4,5},
                                    {1,2,3,4,5},
-                                   {1,2,3,4,5},					 
+                                   {1,2,3,4,5},
                                    {1,2,3,4,5},
                                    {1,2,3,4,5}};
                 Write("Sum elements under main diagonal: ", TraversalMostDiagonal(matrix1));
@@ -157,7 +157,7 @@ public class Mavenproject3
             case ("3.2"):
                 int[][] matrix2 = {{1,2,3,4,5},
                                    {1,2,3,4,5},
-                                   {1,2,3,4,5},					 
+                                   {1,2,3,4,5},
                                    {1,2,3,4,5},
                                    {1,2,3,4,5}};
                 Write("Sum elements under secondary diagonal: ", TraversalSecondaryDiagonal(matrix2));
@@ -166,7 +166,7 @@ public class Mavenproject3
             case ("3.3"):
                 int[][] matrix3 = {{1,2,3,4,5},
                                    {1,2,3,4,5},
-                                   {1,2,3,4,5},					 
+                                   {1,2,3,4,5},
                                    {1,2,3,4,5},
                                    {1,2,3,4,5}};
                 Write("Sum elements cross diagonal: ", TraversalСrossDiagonal(matrix3));
@@ -175,13 +175,19 @@ public class Mavenproject3
             case ("3.4"):
                 int[][] matrix4 = {{1,2,3,4,5},
                                    {1,2,3,4,5},
-                                   {1,2,3,4,5},					 
+                                   {1,2,3,4,5},
                                    {1,2,3,4,5},
                                    {1,2,3,4,5}};
                 Write("Sum elements: ", TraversalHourglass(matrix4));
                 break;
                 
             case ("3.5"):
+                int[][] matrix5 = {{1,2,3,4,5},
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5},
+                                   {1,2,3,4,5}};
+                Write("Sum elements: ", TraversalRhombus(matrix5));
                 break;
                 
             case ("3.6"):
@@ -538,29 +544,25 @@ public class Mavenproject3
         return sum;
     }
 
-    static int TraversalRhombus(int arr[][])
+    static int TraversalRhombus(int mtrx[][]) //(3.5)//
     {
         int sum = 0;
-        int len = arr.length;
-        for(int i = 0; i < len / 2 + len % 2; i++)
-        {
-            for(int j = i; j < len - i; j++)
+        if(mtrx == null || (mtrx.length != mtrx[0].length))
+            return sum;
+        
+        int len = mtrx.length;
+        int indexHi = mtrx.length - 1;
+        
+        for(int i = 0; i < len / 2; i++)
+            for(int j = indexHi / 2 - i; j <= mtrx.length / 2 + i; j++)
             {
-                sum += arr[len / 2 - i][j];
-                System.out.print(arr[len / 2 - i][j] + ", ");
-                sum += arr[len / 2 + i][j];
-                System.out.print(arr[len / 2 + i][j] + ", ");
+                sum += mtrx[i][j];
+                sum += mtrx[indexHi - i][j];
             }
-            System.out.println();
-        }
-        if(len % 2 > 0)
-        {
+        if(len % 2 == 1)
             for(int i = 0; i < len; i++)
-            {
-                sum += arr[len / 2 + 1][i];
-                System.out.print(arr[len / 2 + 1][i] + ", ");
-            }
-        }
+                sum += mtrx[indexHi / 2][i];
+
         return sum;
     }
 
