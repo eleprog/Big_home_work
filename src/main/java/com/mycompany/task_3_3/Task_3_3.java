@@ -1,17 +1,17 @@
 package com.mycompany.task_3_3;
 
-public class Task_3_3 
+public class Task_3_3
 {
     static int TraversalСrossDiagonal(int mtrx[][])
     {
-        int sum = 0;   
+        int sum = 0;
         if(mtrx == null || (mtrx.length != mtrx[0].length))
             return sum;
         
         int indexHi = mtrx.length - 1;
         for(int i = 0; i < mtrx.length / 2; i++)
         {
-            sum += mtrx[i][i];  
+            sum += mtrx[i][i];
             sum += mtrx[i][indexHi - i];
             sum += mtrx[indexHi - i][i];
             sum += mtrx[indexHi - i][indexHi - i];
@@ -21,7 +21,7 @@ public class Task_3_3
         return sum;
     }
     
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         /*int[][] matrix = {{1,9,9,9,1},
                           {9,1,9,1,9},
