@@ -58,7 +58,7 @@ public class Task_4_0
                           {0,0,0,0,0,0},
                           {0,0,0,0,0,0}};
         
-        Scanner myScnr = new Scanner(System.in);     
+        Scanner myScnr = new Scanner(System.in);
         System.out.print("First point: ");
         int firstPoint = myScnr.nextInt();
         System.out.print("Second point: ");
